@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="demo-3772" description="Google Calendar sidebar gadget demo" author="Chris Thompson">
+<Require feature="google.calendar-0.5.read"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<button type="button" onclick="onclick_RetrieveEvents();">Retrieve Events</button>
+<script type="text/javascript" src="https://ctcode.github.io/demo-3772/demo-3772.js"></script>
+]]>
+</Content>
+</Module>

@@ -17,24 +17,4 @@ function receive_events(data)
 // callback when event data received
 {
 	console.log(data);
-
-	for (var j in data)
-	{
-		var cal_data = data[j];
-
-		if (cal_data.error)
-		{
-			alert("error retrieving event data : " + cal_data.error);
-			return;
-		}
-
-		alert("events retrieved : " + cal_data.events.length);
-		
-		for (var k in cal_data.events)
-		{
-			var event = cal_data.events[k];
-
-			console.log(event);
-		}
-	}
 }

@@ -16,6 +16,8 @@ function onclick_RetrieveEvents()
 function receive_events(data)
 // callback when event data received
 {
+	console.log(data);
+
 	for (var j in data)
 	{
 		var cal_data = data[j];

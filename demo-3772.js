@@ -3,6 +3,8 @@ gadgets.util.registerOnLoadHandler(Init);
 
 function Init()
 {
+	var btn = document.getElementById("btnRetrieve");
+	btn.textContent += "March 2016";
 }
 
 function onclick_RetrieveEvents()

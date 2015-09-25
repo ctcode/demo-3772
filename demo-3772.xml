@@ -5,7 +5,7 @@
 </ModulePrefs>
 <Content type="html">
 <![CDATA[
-<button type="button" onclick="onclick_RetrieveEvents();">Retrieve Events</button>
+<button type="button" onclick="onclick_RetrieveEvents();">Retrieve Events occurring during March 2016</button>
 <script type="text/javascript" src="https://ctcode.github.io/demo-3772/demo-3772.js"></script>
 ]]>
 </Content>

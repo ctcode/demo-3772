@@ -41,5 +41,5 @@ function receive_events(data)
 		}
 	}
 	
-	alert("Events:\n\n" + event_list + "\n" + "Total: " + event_count);
+	alert("Events returned:\n\n" + event_list + "\n" + "Total: " + event_count);
 }

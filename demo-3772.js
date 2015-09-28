@@ -1,17 +1,28 @@
 // gadget initialisation
 gadgets.util.registerOnLoadHandler(Init);
 
+var read_event_start;
+var read_event_end;
+
 function Init()
 {
-	document.getElementById("date_text").textContent = "March 2016";
+	var range = new Date();
+	range.setDate(1);
+	range.setMonth(range.getMonth() + 6);
+	read_event_start = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1};
+
+	range.setMonth(range.getMonth() + 1);
+	read_event_end = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1};
+
+	document.getElementById("date_text").textContent = read_event_start.month + "/" + read_event_start.year;
 }
 
 function onclick_RetrieveEvents()
 {
-	var date_start = {year: 2016, month: 3, date: 1};
-	var date_end = {year: 2016, month: 4, date: 1};
-	
-	google.calendar.read.getEvents(receive_events, "selected", date_start, date_end);
+	console.log(read_event_start);
+	console.log(read_event_end);
+
+	google.calendar.read.getEvents(receive_events, "selected", read_event_start, read_event_end);
 }
 
 function receive_events(data)
@@ -41,5 +52,5 @@ function receive_events(data)
 		}
 	}
 	
-	alert("Events returned:\n\n" + event_list + "\n" + "Total: " + event_count);
+	alert(event_count + " events returned:\n\n" + event_list);
 }

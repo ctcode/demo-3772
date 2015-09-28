@@ -3,32 +3,42 @@ gadgets.util.registerOnLoadHandler(Init);
 
 var read_event_start;
 var read_event_end;
+var reset_stamp;
+var month_stamp;
 
 function Init()
 {
 	var range = new Date();
+
 	range.setDate(1);
+	reset_stamp = (range.getFullYear()*10000) + ((range.getMonth() + 1)*100) + 1;
+
 	range.setMonth(range.getMonth() + 6);
 	read_event_start = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1, hour: 0, minute:0, second: 0};
+	month_stamp = (range.getFullYear()*10000) + ((range.getMonth() + 1)*100) + 1;
 
 	range.setMonth(range.getMonth() + 1);
 	read_event_end = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1, hour: 0, minute:0, second: 0};
 
-	document.getElementById("date_text").textContent = "Month: " + read_event_start.month + "/" + read_event_start.year;
-}
-
-function onclick_RetrieveEvents()
-{
 	console.log(read_event_start);
 	console.log(read_event_end);
-
-	google.calendar.read.getEvents(receive_events, "selected", read_event_start, read_event_end);
+	console.log(reset_stamp);
+	console.log(month_stamp);
 }
 
 function onclick_ShowMonth()
 {
-	var show_date = read_event_start.year.toString() + read_event_start.month + "01";
-	window.top.location.replace("https://www.google.com/calendar/render?date=" + show_date + "&mode=month");
+	window.top.location.replace("https://www.google.com/calendar/render?date=" + month_stamp + "&mode=month");
+}
+
+function onclick_Reset()
+{
+	window.top.location.replace("https://www.google.com/calendar/render?date=" + reset_stamp + "&mode=month");
+}
+
+function onclick_RetrieveEvents()
+{
+	google.calendar.read.getEvents(receive_events, "selected", read_event_start, read_event_end);
 }
 
 function receive_events(data)

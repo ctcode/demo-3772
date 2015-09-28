@@ -6,8 +6,9 @@
 <Content type="html">
 <![CDATA[
 <div id="date_text"></div>
+<button type="button" onclick="onclick_ShowMonth();">Show Month + 6</button>
+<button type="button" onclick="onclick_Reset();">Reset</button>
 <button type="button" onclick="onclick_RetrieveEvents();">Retrieve Events</button>
-<button type="button" onclick="onclick_ShowMonth();">Show Month</button>
 <script type="text/javascript" src="https://ctcode.github.io/demo-3772/demo-3772.js"></script>
 ]]>
 </Content>

@@ -25,6 +25,12 @@ function onclick_RetrieveEvents()
 	google.calendar.read.getEvents(receive_events, "selected", read_event_start, read_event_end);
 }
 
+function onclick_ShowMonth()
+{
+	var show_date = read_event_start.year + read_event_start.month + "01";
+	location.replace("https://www.google.com/calendar/render?date=" + show_date + "&mode=month");
+}
+
 function receive_events(data)
 // callback when event data received
 {

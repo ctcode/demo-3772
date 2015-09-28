@@ -1,10 +1,10 @@
-// gadget initialisation
-gadgets.util.registerOnLoadHandler(Init);
-
 var read_event_start;
 var read_event_end;
 var reset_stamp;
 var month_stamp;
+
+// gadget initialisation
+gadgets.util.registerOnLoadHandler(Init);
 
 function Init()
 {

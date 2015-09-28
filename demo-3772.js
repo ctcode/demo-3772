@@ -28,7 +28,7 @@ function onclick_RetrieveEvents()
 function onclick_ShowMonth()
 {
 	var show_date = read_event_start.year.toString() + read_event_start.month + "01";
-	window.location.replace("https://www.google.com/calendar/render?date=" + show_date + "&mode=month");
+	window.top.location.replace("https://www.google.com/calendar/render?date=" + show_date + "&mode=month");
 }
 
 function receive_events(data)

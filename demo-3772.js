@@ -9,12 +9,12 @@ function Init()
 	var range = new Date();
 	range.setDate(1);
 	range.setMonth(range.getMonth() + 6);
-	read_event_start = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1};
+	read_event_start = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1, hour: 0, minute:0, second: 0};
 
 	range.setMonth(range.getMonth() + 1);
-	read_event_end = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1};
+	read_event_end = {year: range.getFullYear(), month: (range.getMonth() + 1), date: 1, hour: 0, minute:0, second: 0};
 
-	document.getElementById("date_text").textContent = read_event_start.month + "/" + read_event_start.year;
+	document.getElementById("date_text").textContent = "Month: " + read_event_start.month + "/" + read_event_start.year;
 }
 
 function onclick_RetrieveEvents()
